@@ -1,0 +1,30 @@
+<rep>
+    <ctrl code="INIT"/>
+    <value type="text" value="TEXT SCRIPT" length="20" align="CENTER"/>
+    <ctrl code="CR"/>
+    <value type="text" source="User:Name"  length="20" align="CENTER"/>
+    <if oper="eq">
+        <l>
+            <value type="text" source="user:Name"/>
+        </l>
+        <r>
+            <value type="text" source="Order:User:Name"/>
+        </r>
+        <true>
+            <value type="text" value="this is a true statement" length="20"/>
+        </true>
+        <false>
+            <value type="text" value="this is a false statement"/>
+        </false>
+    </if>
+    <foreach source = "Detail">
+        <value type="number" source="Detail:nb" length="5" align="LEFT"/>
+        <value type="text" source="Detail:Menu:Name" length="6" align="RIGHT"/>
+        <ctrl code="CR"/>
+    </foreach>
+    <func type="sum" source="Detail:nb" format="%1$,.2f"/>
+    <ctrl code="CR"/>
+    <ctrl code="CR"/>
+    <ctrl code="CR"/>
+    <ctrl code="CUT"/>
+</rep>

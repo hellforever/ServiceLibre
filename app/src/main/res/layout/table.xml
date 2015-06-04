@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/table_uitable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="140dp"
+                android:layout_height="82dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/table_TextView1"
+                    android:layout_width="140dp"
+                    android:layout_height="16dp"
+                    android:gravity="left"
+                    android:paddingLeft="28dp"
+                    android:text="@string/table"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <LinearLayout
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/table_TextView2"
+                    android:layout_width="140dp"
+                    android:layout_height="16dp"
+                    android:gravity="left"
+                    android:paddingLeft="28dp"
+                    android:text="@string/number_of_people"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="450dp"
+                android:layout_height="82dp"
+                android:orientation="horizontal" >
+
+                <Space
+                    android:layout_width="62dp"
+                    android:layout_height="fill_parent" />
+
+                <ImageView
+                    android:id="@+id/table_imageView1"
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_launcher" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="82dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/table_TextViewTotal"
+                        android:layout_width="match_parent"
+                        android:layout_height="16dp"
+                        android:gravity="right"
+                        android:paddingRight="28dp"
+                        android:text="@string/total"
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="vertical" >
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/table_TextTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="16dp"
+                        android:gravity="right"
+                        android:paddingRight="28dp"
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/table_button1"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="28dp"
+                android:background="@drawable/servicebtn"
+                android:onClick="onCallServiceButton"
+                android:layout_gravity="left"
+                android:text="@string/call_service" />
+
+            <Button
+                android:id="@+id/table_button2"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="13dp"
+                android:layout_gravity="left"
+                android:background="@drawable/servicebtn"
+                android:onClick="onPrintOrderButton"
+                android:text="@+string/payment" />
+
+            <TextView
+                android:id="@+id/table_textViewlimit"
+                android:layout_width="55dp"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:layout_gravity="left"
+                android:textSize="40sp" />
+
+            <Button
+                android:id="@+id/table_button3"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_gravity="left"
+                android:background="@drawable/servicebtn"
+                android:text="@+string/list" />
+
+            <Button
+                android:id="@+id/table_button4"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="13dp"
+                android:layout_gravity="left"
+                android:background="@drawable/servicebtn"
+                android:onClick="onOrderingButton"
+                android:text="@+string/order" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+
+            <ScrollView
+                android:id="@+id/table_linear0"
+                android:layout_width="135dp"
+                android:layout_height="505dp"
+                android:layout_marginTop="10dp" >
+
+                <LinearLayout
+                    android:id="@+id/table_linear"
+                    android:layout_width="135dp"
+                    android:layout_height="500dp"
+                    android:orientation="vertical" >
+                </LinearLayout>
+            </ScrollView>
+
+            <ListView
+                android:id="@+id/table_listview"
+                android:layout_width="fill_parent"
+                android:layout_height="500dp"
+                android:paddingLeft="20dp" >
+            </ListView>
+
+            <GridView
+                android:id="@+id/table_gridview"
+                android:layout_width="wrap_content"
+                android:layout_height="500dp"
+                android:columnWidth="100dp"
+                android:gravity="center"
+                android:horizontalSpacing="10dp"
+                android:numColumns="2"
+                android:paddingLeft="35dp"
+                android:paddingRight="34dp"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="10dp" >
+            </GridView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/table_panelbig"
+            android:layout_width="match_parent"
+            android:layout_height="186dp"
+            android:background="@drawable/control_panel"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/table_switch"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/table_button6"
+                    android:layout_width="90dp"
+                    android:layout_height="58dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/list_on"
+                    android:onClick="onClickListButton" />
+
+                <Button
+                    android:id="@+id/table_button5"
+                    android:layout_width="90dp"
+                    android:layout_height="58dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/form"
+                    android:onClick="onClickIconButton" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/table_panellittle"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal" >
+
+                <HorizontalScrollView
+                    android:layout_width="500dp"
+                    android:layout_height="70dp" >
+
+                    <LinearLayout
+                        android:id="@+id/table_turn"
+                        android:layout_width="500dp"
+                        android:layout_height="70dp"
+                        android:orientation="horizontal"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="15dp" >
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="70dp"
+                    android:gravity="right|bottom" >
+
+                    <Button
+                        android:id="@+id/table_buttonAll"
+                        android:layout_width="90dp"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/allbtn"
+                        android:text="@+string/all" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/login_TextViewBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:gravity="center"
+                android:text="@string/copy_right"
+                android:textSize="12sp" >
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/table_coverflow"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:background="@drawable/bgb"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/coverflow_textView0"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="30sp" />
+
+        <view
+            xmlns:coverflow="http://schemas.android.com/apk/res/com.example.servicelibre"
+            android:id="@+id/coverflowReflect"
+            android:layout_width="fill_parent"
+            android:layout_height="420dp"
+            android:layout_marginTop="5dip"
+            class="com.example.servicelibre.CoverFlow"
+            coverflow:imageHeight="140dip"
+            coverflow:imageReflectionRatio="0.2"
+            coverflow:imageWidth="100dip"
+            coverflow:reflectionGap="10dip"
+            coverflow:withReflection="true" />
+
+        <TextView
+            android:id="@+id/coverflow_textView11"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text=""
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/coverflow_button1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/minusbtn3" />
+
+            <TextView
+                android:id="@+id/coverflow_textView1"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:background="@drawable/text3"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:text="0" />
+
+            <Button
+                android:id="@+id/coverflow_button2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/plusbtn3" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="7"
+                android:gravity="right|center_vertical"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/coverflow_button3"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/back3"
+                    android:onClick="onClickBackCoverFlow"
+                    android:text="@+string/back" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/login_TextViewBar"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/black"
+                android:gravity="center"
+                android:text="@string/copy_right"
+                android:textSize="12sp" >
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

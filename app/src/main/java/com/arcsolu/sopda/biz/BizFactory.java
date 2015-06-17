@@ -20,7 +20,6 @@ public final class BizFactory implements Serializable{
             synchronized(BizFactory.class) {
                 if(insFloor == null)
 						insFloor = new ImpBizFloor();
-				
             } 
         }
         return insFloor;
@@ -39,7 +38,6 @@ public final class BizFactory implements Serializable{
             synchronized(BizFactory.class) {
                 if(insTable == null)
 						insTable = new ImpBizTable();
-					
             } 
         }
         return insTable;
@@ -78,7 +76,6 @@ public final class BizFactory implements Serializable{
             synchronized(BizFactory.class) {
                 if(insBP == null)
 						insBP = new ImpBizOrderPrinter();
-				
             } 
         }
         return insBP;

@@ -52,7 +52,7 @@
             android:screenOrientation="portrait" />
     
         <activity
-            android:name="com.example.servicelibre.Sysm_conf"
+            android:name=".SysmConf"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.example.servicelibre.UIFormule"

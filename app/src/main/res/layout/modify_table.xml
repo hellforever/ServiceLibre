@@ -116,7 +116,7 @@
                 android:layout_height="fill_parent"
                 android:ems="5"
                 android:text="返回" 
-                android:onClick="OnRetourButtonClick"/>
+                android:onClick="onRetourButtonClick"/>
         </LinearLayout>
     </LinearLayout>
 

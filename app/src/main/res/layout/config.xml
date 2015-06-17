@@ -20,7 +20,7 @@
             android:layout_marginRight="25dp"
             android:layout_marginTop="5dp"
             android:layout_weight="1"
-            android:onClick="OnMenuButtonClick"
+            android:onClick="onMenuButtonClick"
             android:text="@+string/menu"
             android:textSize="25sp" />
 
@@ -33,7 +33,7 @@
             android:layout_marginRight="25dp"
             android:layout_marginTop="5dp"
             android:layout_weight="1"
-            android:onClick="OnSysButtonClick"
+            android:onClick="onSysButtonClick"
             android:text="@+string/sysm_param"
             android:textSize="25sp" />
 
@@ -46,7 +46,7 @@
             android:layout_marginRight="25dp"
             android:layout_marginTop="5dp"
             android:layout_weight="1"
-            android:onClick="OnRetourButtonClick"
+            android:onClick="onRetourButtonClick"
             android:text="@+string/_return"
             android:textSize="25sp" />
     </LinearLayout>

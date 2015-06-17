@@ -44,21 +44,21 @@
                         android:id="@+id/addition_button7"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:onClick="OnNumButtonClick"
+                        android:onClick="onNumButtonClick"
                         android:text="7" />
 
                     <Button
                         android:id="@+id/addition_button8"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:onClick="OnNumButtonClick"
+                        android:onClick="onNumButtonClick"
                         android:text="8" />
 
                     <Button
                         android:id="@+id/addition_button9"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:onClick="OnNumButtonClick"
+                        android:onClick="onNumButtonClick"
                         android:text="9" />
                 </TableRow>
 
@@ -71,21 +71,21 @@
                         android:id="@+id/addition_button4"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:onClick="OnNumButtonClick"
+                        android:onClick="onNumButtonClick"
                         android:text="4" />
 
                     <Button
                         android:id="@+id/addition_button5"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:onClick="OnNumButtonClick"
+                        android:onClick="onNumButtonClick"
                         android:text="5" />
 
                     <Button
                         android:id="@+id/addition_button6"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:onClick="OnNumButtonClick"
+                        android:onClick="onNumButtonClick"
                         android:text="6" />
                 </TableRow>
 
@@ -98,21 +98,21 @@
                         android:id="@+id/addition_button1"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:onClick="OnNumButtonClick"
+                        android:onClick="onNumButtonClick"
                         android:text="1" />
 
                     <Button
                         android:id="@+id/addition_button2"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:onClick="OnNumButtonClick"
+                        android:onClick="onNumButtonClick"
                         android:text="2" />
 
                     <Button
                         android:id="@+id/addition_button3"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:onClick="OnNumButtonClick"
+                        android:onClick="onNumButtonClick"
                         android:text="3" />
                 </TableRow>
 
@@ -126,21 +126,21 @@
                         android:id="@+id/addition_buttonsup"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:onClick="OnSupButtonClick"
+                        android:onClick="onSupButtonClick"
                         android:text="@string/back" />
 
                     <Button
                         android:id="@+id/addition_button0"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:onClick="OnNumButtonClick"
+                        android:onClick="onNumButtonClick"
                         android:text="0" />
 
                     <Button
                         android:id="@+id/addition_buttonok"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:onClick="OnOkButtonClick"
+                        android:onClick="onOkButtonClick"
                         android:text="@string/OK" />
                 </TableRow>
             </TableLayout>

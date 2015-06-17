@@ -76,7 +76,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:height="60dp"
-            android:onClick="OnRetourButtonClick"
+            android:onClick="onRetourButtonClick"
             android:text="@+string/_return" />
     </LinearLayout>
 

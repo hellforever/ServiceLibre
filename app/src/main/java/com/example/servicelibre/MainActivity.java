@@ -7,10 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -31,6 +27,7 @@ import java.util.Locale;
 
 public class MainActivity extends Activity {
 
+    private static final String TAG = "MainActivity";
     String password = "";
     Order thisOrder = null;
     String floorview;
@@ -41,9 +38,9 @@ public class MainActivity extends Activity {
     private void initLanguage(String localName) {
         Locale locale = null;
         Locale[] locales = Locale.getAvailableLocales();
-        for (Locale l : locales) {
-            if (l.toString().equalsIgnoreCase(localName)) {
-                locale = l;
+        for (Locale thisLocale : locales) {
+            if (thisLocale.toString().equalsIgnoreCase(localName)) {
+                locale = thisLocale;
                 break;
             }
         }
@@ -76,26 +73,6 @@ public class MainActivity extends Activity {
         bg.setBackgroundDrawable(getResources().getDrawable(bbg));
     }
 
-    private void setLogo() {
-        byte[] logo = null;
-        try {
-            logo = BizFactory.getBizApp(getFilesDir()).getLogo();
-        } catch (Exception e) {
-
-        }
-
-        TextView logocase = (TextView) findViewById(R.id.login_imageButton10);
-
-        if (logo != null) {
-            logocase.setVisibility(ImageButton.VISIBLE);
-            Bitmap bitmap = BitmapFactory.decodeByteArray(logo, 0, logo.length);
-            Drawable d = new BitmapDrawable(getResources(), bitmap);
-            logocase.setBackgroundDrawable(d);
-        } else {
-            logocase.setVisibility(ImageButton.INVISIBLE);
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         SharedPreferences sharedPreferences = getSharedPreferences("com",
@@ -106,8 +83,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initBackground(pic);
-        setLogo();
-
 
 
         handler = new Handler() {
@@ -118,18 +93,18 @@ public class MainActivity extends Activity {
                     switch (msg.what) {
                         case 0:
                             boolean network = false;
-                            BizApp bizApp =  BizFactory.getBizApp(getFilesDir());
+                            BizApp bizApp = BizFactory.getBizApp(getFilesDir());
                             try {
-                                String _address = bizApp
+                                String address = bizApp
                                         .GetParam(Parametres.ParaKey.ADDRESS);
-                                String _database = bizApp
+                                String database = bizApp
                                         .GetParam(Parametres.ParaKey.DATABASE);
-                                String _usename = bizApp
+                                String usename = bizApp
                                         .GetParam(Parametres.ParaKey.MASTER);
-                                String _password = bizApp
+                                String password = bizApp
                                         .GetParam(Parametres.ParaKey.DB_PASSWORD);
-                                network = bizApp.GetFBDB(_address, _database,
-                                        _usename, _password);
+                                network = bizApp.GetFBDB(address, database,
+                                        usename, password);
                                 floorview = bizApp
                                         .GetParam(Parametres.ParaKey.MAPMODE);
                             } catch (Exception e) {
@@ -175,13 +150,7 @@ public class MainActivity extends Activity {
                                 }
                             }
                             break;
-
-                        case 1:
-                            dialogActiver.dismiss();
-                            finish();
-                            break;
-
-                        case 2:
+                        default:
 
                     }
                 }
@@ -196,37 +165,37 @@ public class MainActivity extends Activity {
 
     }
 
-    public void OnNumButtonClick(View view) {
-
+    public void onNumButtonClick(View view) {
         Button btn = (Button) view;
         TextView edt = (TextView) findViewById(R.id.login_TextView1);
         String affichage = "";
 
         password = password + btn.getTag().toString();
-        for (int i = 0; i < password.length(); i++)
+        for (int i = 0; i < password.length(); i++) {
             affichage += "*";
+        }
         edt.setText(affichage);
     }
 
-    public void OnSupButtonClick(View view) {
+    public void onSupButtonClick(View view) {
 
         TextView edt = (TextView) findViewById(R.id.login_TextView1);
         String temp = edt.getText().toString();
-        if (temp.length() == 0)
+        if (temp.length() == 0) {
             return;
+        }
         password = password.substring(0, temp.length() - 1);
         temp = temp.substring(0, temp.length() - 1);
-        edt.setText(temp.toString());
+        edt.setText(temp);
 
     }
 
-    public void OnOkButtonClick(View view) {
+    public void onOkButtonClick(View view) {
         User user = null;
         try {
             user = BizFactory.getBizApp(getFilesDir()).Login(password);
         } catch (Exception e) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("No networks, please configure the parameters")
+            new AlertDialog.Builder(this).setTitle("No networks, please configure the parameters")
                     .show();
             return;
         }
@@ -251,7 +220,7 @@ public class MainActivity extends Activity {
         }
     }
 
-    public void OnConfigButtonClick(View view) {
+    public void onConfigButtonClick(View view) {
         Intent intent = new Intent();
         intent.setClass(MainActivity.this, AdminConfig.class);
         startActivity(intent);
@@ -262,7 +231,7 @@ public class MainActivity extends Activity {
         private Locale locale = Locale.SIMPLIFIED_CHINESE;
 
         public LocaleSetClickListener(String locale) {
-            Locale locales[] = Locale.getAvailableLocales();
+            Locale[] locales = Locale.getAvailableLocales();
             for (Locale l : locales) {
                 if (l.toString().equalsIgnoreCase(locale)) {
                     this.locale = l;

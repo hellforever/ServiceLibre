@@ -232,9 +232,9 @@ public class MainActivity extends Activity {
 
         public LocaleSetClickListener(String locale) {
             Locale[] locales = Locale.getAvailableLocales();
-            for (Locale l : locales) {
-                if (l.toString().equalsIgnoreCase(locale)) {
-                    this.locale = l;
+            for (Locale myLocales : locales) {
+                if (myLocales.toString().equalsIgnoreCase(locale)) {
+                    this.locale = myLocales;
                     break;
                 }
             }

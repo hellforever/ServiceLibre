@@ -8,6 +8,7 @@
 *.class
 
 .idea/
+.idea
 # Generated files
 bin/
 gen/
